@@ -2,6 +2,7 @@ package SimpleMaven.SimpleMaven;
 
 import java.awt.Point;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -12,19 +13,21 @@ public class App
     {
     	ChromeOptions op = new ChromeOptions();
     	op.addArguments("--incognito");
-        //System.out.println( "Hello World!" );
         
-        //System.setProperty("Webdriver.chrome.driver","Driver\\chromedriver.exe");
         WebDriver driver= new ChromeDriver(op);
-        
         driver.manage().window().maximize();
+       
+        driver.get("https://app.meetsoci.com/admin/login");
         
-        driver.get("https://www.google.com");
+        driver.findElement(By.xpath("//input[@placeholder='Email Address']")).sendKeys("ayadav@meetsoci.com");
+        driver.findElement(By.xpath("//input[@placeholder='Password']")).sendKeys("Ajay*141#");
+        driver.findElement(By.xpath("//button[normalize-space()='Sign In']")).click();
         
-        //Point p= new Point(0,3000);
-        driver.manage().window().minimize();
         
-        driver.quit();
+        
+        //driver.manage().window().minimize();
+        
+        //driver.quit();
         
         
     }
