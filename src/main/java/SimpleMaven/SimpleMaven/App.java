@@ -22,6 +22,8 @@ public class App
         driver.findElement(By.xpath("//input[@placeholder='Email Address']")).sendKeys("ayadav@meetsoci.com");
         driver.findElement(By.xpath("//input[@placeholder='Password']")).sendKeys("Ajay*141#");
         driver.findElement(By.xpath("//button[normalize-space()='Sign In']")).click();
+        driver.findElement(By.xpath("//span[@class='select2-chosen']")).sendKeys("Ajay Yadav Account");
+        
         
         
         
